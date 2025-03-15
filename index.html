@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jogo do Botão Fugitivo</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f0f0f0;
+            overflow: hidden;
+        }
+        button {
+            position: absolute;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+    <h1 style="margin-bottom: 300px;">if u get this button u wont get be my gf</h1>
+    <button id="fugir">try catch me!</button>
+
+    <script>
+        const botao = document.getElementById("fugir");
+
+        botao.addEventListener("mouseover", () => {
+            const larguraJanela = window.innerWidth;
+            const alturaJanela = window.innerHeight;
+            
+            const novaPosX = Math.random() * (larguraJanela - botao.clientWidth);
+            const novaPosY = Math.random() * (alturaJanela - botao.clientHeight);
+            
+            botao.style.left = `${novaPosX}px`;
+            botao.style.top = `${novaPosY}px`;
+        });
+    </script>
+</body>
+</html>
